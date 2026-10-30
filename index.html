@@ -1,83 +1,57 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <meta name="theme-color" content="#0f1419" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Фармакология" />
-  <title>Фармакология — тесты</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/urman2017-ai/pharmacology_quiz@main/style.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"/>
+<meta name="theme-color" content="#0f1419"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>Фармакология — тесты</title>
+<link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="app">
-    <header class="top">
-      <h1>Фармакология</h1>
-      <p>Тесты к коллоквиуму · Харкевич</p>
-    </header>
-    <main>
-      <section id="home" class="screen active">
-        <p class="hint">Выбери тему — вопросы перемешиваются</p>
-        <div class="categories">
-          <button type="button" class="cat-card" data-cat="all">
-            <span class="count">50</span>
-            <span class="cat-title">Все темы</span>
-            <span class="cat-desc">Полный набор вопросов</span>
-          </button>
-          <button type="button" class="cat-card" data-cat="la">
-            <span class="count">14</span>
-            <span class="cat-title">Местные анестетики</span>
-            <span class="cat-desc">Лидокаин, новокаин, бупивакаин</span>
-          </button>
-          <button type="button" class="cat-card" data-cat="mimetics">
-            <span class="count">12</span>
-            <span class="cat-title">Адреномиметики</span>
-            <span class="cat-desc">Адреналин, мезатон, сальбутамол</span>
-          </button>
-          <button type="button" class="cat-card" data-cat="blockers">
-            <span class="count">16</span>
-            <span class="cat-title">Адреноблокаторы</span>
-            <span class="cat-desc">Празозин, пропранолол, резерпин</span>
-          </button>
-          <button type="button" class="cat-card" data-cat="classify">
-            <span class="count">8</span>
-            <span class="cat-title">Классификация</span>
-            <span class="cat-desc">Миметики vs блокаторы</span>
-          </button>
-        </div>
-        <p class="install-hint">На iPhone: Safari → Поделиться → «На экран «Домой»</p>
-      </section>
-      <section id="quiz" class="screen">
-        <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
-        <div class="meta">
-          <span id="q-num">Вопрос 1</span>
-          <span id="score-live">Верно: 0</span>
-        </div>
-        <div class="question-card">
-          <div class="question-text" id="q-text"></div>
-          <div class="options" id="options"></div>
-          <div class="explanation" id="explanation"></div>
-        </div>
-        <div class="btn-row sticky-bottom">
-          <button type="button" class="btn btn-secondary" id="btn-home">Темы</button>
-          <button type="button" class="btn btn-primary" id="btn-next" disabled>Далее</button>
-        </div>
-      </section>
-      <section id="results" class="screen">
-        <div class="results-card">
-          <p class="results-label">Результат</p>
-          <div class="score-big" id="final-score">0%</div>
-          <p id="final-detail"></p>
-          <div class="btn-row">
-            <button type="button" class="btn btn-primary" id="btn-retry">Ещё раз</button>
-            <button type="button" class="btn btn-secondary" id="btn-to-home">К темам</button>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
-  <script src="https://cdn.jsdelivr.net/gh/urman2017-ai/pharmacology_quiz@main/questions.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/urman2017-ai/pharmacology_quiz@main/logic.js"></script>
+<div class="app">
+<header class="top">
+<h1>Фармакология</h1>
+<p>Тесты к коллоквиуму · Харкевич</p>
+</header>
+<main>
+<section id="home" class="screen active">
+<p class="hint">Выбери тему — вопросы перемешиваются</p>
+<div class="categories">
+<button type="button" class="cat-card" data-cat="all"><span class="count">50</span><span class="cat-title">Все темы</span><span class="cat-desc">Полный набор вопросов</span></button>
+<button type="button" class="cat-card" data-cat="la"><span class="count">14</span><span class="cat-title">Местные анестетики</span><span class="cat-desc">Лидокаин, новокаин, бупивакаин</span></button>
+<button type="button" class="cat-card" data-cat="mimetics"><span class="count">12</span><span class="cat-title">Адреномиметики</span><span class="cat-desc">Адреналин, мезатон, сальбутамол</span></button>
+<button type="button" class="cat-card" data-cat="blockers"><span class="count">16</span><span class="cat-title">Адреноблокаторы</span><span class="cat-desc">Празозин, пропранолол, резерпин</span></button>
+<button type="button" class="cat-card" data-cat="classify"><span class="count">8</span><span class="cat-title">Классификация</span><span class="cat-desc">Миметики vs блокаторы</span></button>
+</div>
+</section>
+<section id="quiz" class="screen">
+<div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+<div class="meta"><span id="q-num">Вопрос 1</span><span id="score-live">Верно: 0</span></div>
+<div class="question-card">
+<div class="question-text" id="q-text"></div>
+<div class="options" id="options"></div>
+<div class="explanation" id="explanation"></div>
+</div>
+<div class="btn-row sticky-bottom">
+<button type="button" class="btn btn-secondary" id="btn-home">Темы</button>
+<button type="button" class="btn btn-primary" id="btn-next" disabled>Далее</button>
+</div>
+</section>
+<section id="results" class="screen">
+<div class="results-card">
+<p class="results-label">Результат</p>
+<div class="score-big" id="final-score">0%</div>
+<p id="final-detail"></p>
+<div class="btn-row">
+<button type="button" class="btn btn-primary" id="btn-retry">Ещё раз</button>
+<button type="button" class="btn btn-secondary" id="btn-to-home">К темам</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+<script src="questions.js"></script>
+<script src="logic.js"></script>
 </body>
 </html>
