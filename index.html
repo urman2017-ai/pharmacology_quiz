@@ -2,82 +2,92 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Фармакология — тесты к коллоквиуму</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f1419" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Фармакология" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon.svg" />
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+  <title>Фармакология — тесты</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
+  <div class="app">
+    <header class="top">
       <h1>Фармакология</h1>
-      <p>Тесты к 2-му коллоквиуму (Харкевич + лекции)</p>
-      <span class="badge">Местные анестетики · Адренергическая система</span>
+      <p>Тесты к коллоквиуму · Харкевич</p>
     </header>
-
-    <div id="home" class="screen active">
-      <div class="categories">
-        <div class="cat-card" data-cat="all">
-          <span class="count">все</span>
-          <h3>Все темы</h3>
-          <p>Смешанный режим — полный объём вопросов</p>
+    <main>
+      <section id="home" class="screen active">
+        <p class="hint">Выбери тему — вопросы перемешиваются</p>
+        <div class="categories">
+          <button type="button" class="cat-card" data-cat="all">
+            <span class="count">50</span>
+            <span class="cat-title">Все темы</span>
+            <span class="cat-desc">Полный набор вопросов</span>
+          </button>
+          <button type="button" class="cat-card" data-cat="la">
+            <span class="count">14</span>
+            <span class="cat-title">Местные анестетики</span>
+            <span class="cat-desc">Лидокаин, новокаин, бупивакаин</span>
+          </button>
+          <button type="button" class="cat-card" data-cat="mimetics">
+            <span class="count">12</span>
+            <span class="cat-title">Адреномиметики</span>
+            <span class="cat-desc">Адреналин, мезатон, сальбутамол</span>
+          </button>
+          <button type="button" class="cat-card" data-cat="blockers">
+            <span class="count">16</span>
+            <span class="cat-title">Адреноблокаторы</span>
+            <span class="cat-desc">Празозин, пропранолол, резерпин</span>
+          </button>
+          <button type="button" class="cat-card" data-cat="classify">
+            <span class="count">8</span>
+            <span class="cat-title">Классификация</span>
+            <span class="cat-desc">Миметики vs блокаторы</span>
+          </button>
         </div>
-        <div class="cat-card" data-cat="la">
-          <span class="count">14</span>
-          <h3>Местные анестетики</h3>
-          <p>Лидокаин, новокаин, бупивакаин, механизм, виды анестезии</p>
+        <p class="install-hint">На iPhone: Safari → Поделиться → «На экран «Домой»</p>
+      </section>
+      <section id="quiz" class="screen">
+        <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+        <div class="meta">
+          <span id="q-num">Вопрос 1</span>
+          <span id="score-live">Верно: 0</span>
         </div>
-        <div class="cat-card" data-cat="mimetics">
-          <span class="count">12</span>
-          <h3>Адреномиметики и симпатомиметики</h3>
-          <p>Адреналин, норадреналин, мезатон, сальбутамол, эфедрин</p>
+        <div class="question-card">
+          <div class="question-text" id="q-text"></div>
+          <div class="options" id="options"></div>
+          <div class="explanation" id="explanation"></div>
         </div>
-        <div class="cat-card" data-cat="blockers">
-          <span class="count">16</span>
-          <h3>Адреноблокаторы и симпатолитики</h3>
-          <p>Празозин, пропранолол, атенолол, резерпин, октадин</p>
+        <div class="btn-row sticky-bottom">
+          <button type="button" class="btn btn-secondary" id="btn-home">Темы</button>
+          <button type="button" class="btn btn-primary" id="btn-next" disabled>Далее</button>
         </div>
-        <div class="cat-card" data-cat="classify">
-          <span class="count">8</span>
-          <h3>Классификация и сопоставление</h3>
-          <p>«Что к чему», миметики vs блокаторы, селективность</p>
+      </section>
+      <section id="results" class="screen">
+        <div class="results-card">
+          <p class="results-label">Результат</p>
+          <div class="score-big" id="final-score">0%</div>
+          <p id="final-detail"></p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" id="btn-retry">Ещё раз</button>
+            <button type="button" class="btn btn-secondary" id="btn-to-home">К темам</button>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div id="quiz" class="screen">
-      <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
-      <div class="meta">
-        <span id="q-num">Вопрос 1</span>
-        <span id="score-live">Верно: 0</span>
-      </div>
-      <div class="question-card">
-        <div class="question-text" id="q-text"></div>
-        <div class="options" id="options"></div>
-        <div class="explanation" id="explanation"></div>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-secondary" id="btn-home">К темам</button>
-        <button class="btn btn-primary" id="btn-next" disabled>Далее</button>
-      </div>
-    </div>
-
-    <div id="results" class="screen">
-      <div class="results">
-        <p>Результат</p>
-        <div class="score-big" id="final-score">0%</div>
-        <p id="final-detail"></p>
-        <div class="btn-row" style="justify-content:center">
-          <button class="btn btn-primary" id="btn-retry">Ещё раз</button>
-          <button class="btn btn-secondary" id="btn-to-home">К темам</button>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      По Харкевичу Д.А. и материалам кафедры · для подготовки к коллоквиуму
-    </footer>
+      </section>
+    </main>
   </div>
   <script src="questions.js"></script>
   <script src="logic.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js").catch(function () {});
+    }
+  </script>
 </body>
 </html>
