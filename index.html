@@ -7,12 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Фармакология" />
-  <meta name="mobile-web-app-capable" content="yes" />
-  <link rel="manifest" href="manifest.json" />
-  <link rel="apple-touch-icon" href="icons/icon.svg" />
-  <link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
   <title>Фармакология — тесты</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/urman2017-ai/pharmacology_quiz@main/style.css" />
 </head>
 <body>
   <div class="app">
@@ -81,12 +77,7 @@
       </section>
     </main>
   </div>
-  <script src="questions.js"></script>
-  <script src="logic.js"></script>
-  <script>
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("./sw.js").catch(function () {});
-    }
-  </script>
+  <script src="https://cdn.jsdelivr.net/gh/urman2017-ai/pharmacology_quiz@main/questions.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/urman2017-ai/pharmacology_quiz@main/logic.js"></script>
 </body>
 </html>
