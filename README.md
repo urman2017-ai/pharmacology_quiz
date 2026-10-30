@@ -1,25 +1,13 @@
 # Фармакология — тесты
 
-Интерактивный сайт с тестами к коллоквиуму (Харкевич).
+## Как открыть сайт прямо сейчас
 
-## Ссылка на сайт
+**Вариант 1 — предпросмотр (работает сразу):**
+https://htmlpreview.github.io/?https://raw.githubusercontent.com/urman2017-ai/pharmacology_quiz/main/index.html
 
-После включения Pages (1 минута):
-**https://urman2017-ai.github.io/pharmacology_quiz/**
+**Вариант 2 — постоянный адрес (нужно включить Pages один раз):**
+1. https://github.com/urman2017-ai/pharmacology_quiz/settings/pages
+2. Source → Deploy from a branch → main → / (root) → Save
+3. Сайт: https://urman2017-ai.github.io/pharmacology_quiz/
 
-### Как включить (один раз)
-
-1. Открой https://github.com/urman2017-ai/pharmacology_quiz/settings/pages
-2. **Source** → **GitHub Actions** → Save
-3. Подожди 1–2 минуты, открой ссылку выше
-
-### На iPhone
-
-1. Открой сайт в **Safari**
-2. Поделиться → **На экран «Домой»**
-
-Работает как приложение, офлайн после первой загрузки.
-
-### Локально
-
-Скачай `index.html` и открой в браузере — всё в одном файле.
+Все на русском. Работает на iPhone.
