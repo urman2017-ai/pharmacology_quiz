@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
-  <meta name="theme-color" content="#f5f0e8" />
+  <meta name="theme-color" content="#0f1419" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Фармакология" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="icons/icon.svg" />
@@ -16,36 +16,41 @@
   <div class="app">
     <header class="top">
       <h1>Фармакология</h1>
-      <p>Тесты к коллоквиуму · Харкевич · 100+ вопросов</p>
+      <p>Тесты к коллоквиуму · Харкевич · 106 вопросов</p>
     </header>
     <main>
       <section id="home" class="screen active">
-        <p class="hint">Выбери тему — вопросы перемешиваются. Есть сложные клинические задания.</p>
+        <p class="hint">Выбери тему или пройди всё подряд — без возврата на старт</p>
         <div class="categories">
+          <button type="button" class="cat-card" data-cat="chain">
+            <span class="count">→</span>
+            <span class="cat-title">Учить подряд</span>
+            <span class="cat-desc">Анестетики → миметики → блокаторы → клиника</span>
+          </button>
           <button type="button" class="cat-card" data-cat="all">
             <span class="count">106</span>
             <span class="cat-title">Все темы</span>
-            <span class="cat-desc">Полный банк для коллоквиума</span>
+            <span class="cat-desc">Смешанный полный банк</span>
           </button>
           <button type="button" class="cat-card" data-cat="la">
             <span class="count">26</span>
             <span class="cat-title">Местные анестетики</span>
-            <span class="cat-desc">Лидокаин, новокаин, бупивакаин, токсичность</span>
+            <span class="cat-desc">Лидокаин, новокаин, бупивакаин</span>
           </button>
           <button type="button" class="cat-card" data-cat="mimetics">
             <span class="count">24</span>
             <span class="cat-title">Адреномиметики</span>
-            <span class="cat-desc">Адреналин, мезатон, сальбутамол, эфедрин</span>
+            <span class="cat-desc">Адреналин, мезатон, сальбутамол</span>
           </button>
           <button type="button" class="cat-card" data-cat="blockers">
             <span class="count">28</span>
             <span class="cat-title">Адреноблокаторы</span>
-            <span class="cat-desc">Празозин, β-блокаторы, резерпин, клиника</span>
+            <span class="cat-desc">Празозин, β-блокаторы, резерпин</span>
           </button>
           <button type="button" class="cat-card" data-cat="classify">
             <span class="count">28</span>
             <span class="cat-title">Классификация и клиника</span>
-            <span class="cat-desc">Сопоставления, выбор препарата, сценарии</span>
+            <span class="cat-desc">Сопоставления и сценарии</span>
           </button>
         </div>
         <p class="install-hint">На iPhone: Safari → Поделиться → «На экран «Домой»</p>
@@ -54,6 +59,7 @@
         <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
         <div class="meta">
           <span id="q-num">Вопрос 1</span>
+          <span id="topic-label" class="topic-label"></span>
           <span id="score-live">Верно: 0</span>
         </div>
         <div class="question-card">
@@ -71,6 +77,10 @@
           <p class="results-label">Результат</p>
           <div class="score-big" id="final-score">0%</div>
           <p id="final-detail"></p>
+          <p class="next-topic-hint" id="next-topic-hint" style="display:none"></p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-next-topic" id="btn-next-topic" style="display:none">Следующая тема</button>
+          </div>
           <div class="btn-row">
             <button type="button" class="btn btn-primary" id="btn-retry">Ещё раз</button>
             <button type="button" class="btn btn-secondary" id="btn-to-home">К темам</button>
@@ -79,7 +89,10 @@
       </section>
     </main>
   </div>
-  <script src="questions.js"></script>
+  <script src="questions_0.js"></script>
+  <script src="questions_1.js"></script>
+  <script src="questions_2.js"></script>
+  <script src="questions_3.js"></script>
   <script src="logic.js"></script>
 </body>
 </html>
